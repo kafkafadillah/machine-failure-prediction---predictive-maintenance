@@ -1,0 +1,28 @@
+Surrogate decision tree (depth 4) — fidelity terhadap keputusan model final (threshold 0.025) pada test set: 98.05%
+Satuan fisik asli: K, rpm, Nm, min, W, min·Nm; strain_ratio = strain / batas varian.
+
+|--- wear_fraction <= 0.8
+|   |--- power_w <= 8904.6
+|   |   |--- power_w <= 3550.6
+|   |   |   |--- class: 1
+|   |   |--- power_w >  3550.6
+|   |   |   |--- strain_minnm <= 10972.2
+|   |   |   |   |--- class: 0
+|   |   |   |--- strain_minnm >  10972.2
+|   |   |   |   |--- class: 1
+|   |--- power_w >  8904.6
+|   |   |--- power_w <= 9035.5
+|   |   |   |--- class: 1
+|   |   |--- power_w >  9035.5
+|   |   |   |--- class: 1
+|--- wear_fraction >  0.8
+|   |--- wear_fraction <= 0.9
+|   |   |--- air_temp_k <= 300.4
+|   |   |   |--- class: 1
+|   |   |--- air_temp_k >  300.4
+|   |   |   |--- class: 1
+|   |--- wear_fraction >  0.9
+|   |   |--- wear_fraction <= 0.9
+|   |   |   |--- class: 1
+|   |   |--- wear_fraction >  0.9
+|   |   |   |--- class: 1

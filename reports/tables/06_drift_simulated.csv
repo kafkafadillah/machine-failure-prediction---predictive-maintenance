@@ -1,0 +1,7 @@
+feature,psi,status
+air_temp_k,1.8979440305111006,signifikan
+process_temp_k,1.6900845331302126,signifikan
+tool_wear_min,0.9361366640979653,signifikan
+torque_nm,0.007873166508167792,stabil
+rot_speed_rpm,0.004541461380271336,stabil
+type,0.00162963250661069,stabil

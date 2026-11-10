@@ -1,0 +1,9 @@
+| Pemeriksaan | Hasil |
+|---|---|
+| Jumlah baris | 10000 |
+| Baris duplikat | 0 |
+| Sel kosong | 0 |
+| Failure rate | 3.39% |
+| Failure=1 tanpa mode (UDI) | 9 |
+| Mode=1 tetapi failure=0 | 18 |
+| Prefix Product ID == Type | 100% |

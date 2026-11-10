@@ -1,0 +1,28 @@
+{
+  "created_utc": "2026-11-09T16:23:05+00:00",
+  "raw_file": "data/raw/machine_failure.csv",
+  "raw_md5": "f0adaa9c5e25366c6df1cc2684479871",
+  "random_state": 42,
+  "test_size": 0.2,
+  "n_train": 8000,
+  "n_test": 2000,
+  "failures_train": 271,
+  "failures_test": 68,
+  "failure_rate_train": 0.03388,
+  "failure_rate_test": 0.034,
+  "feature_columns": [
+    "type",
+    "air_temp_k",
+    "process_temp_k",
+    "rot_speed_rpm",
+    "torque_nm",
+    "tool_wear_min"
+  ],
+  "excluded_leakage_columns": [
+    "TWF",
+    "HDF",
+    "PWF",
+    "OSF",
+    "RNF"
+  ]
+}

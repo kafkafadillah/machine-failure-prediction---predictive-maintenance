@@ -1,0 +1,34 @@
+{
+  "final_model": "random_forest",
+  "final_model_label": "Random Forest",
+  "ensemble_members": [],
+  "calibration": "none",
+  "threshold": 0.025,
+  "oof_pr_auc": 0.9106494954746085,
+  "oof_roc_auc": 0.9791170838348312,
+  "oof_brier": 0.006348020457496099,
+  "best_params": {
+    "model__class_weight": null,
+    "model__max_depth": 8,
+    "model__max_features": 0.7,
+    "model__min_samples_leaf": 7,
+    "model__n_estimators": 500
+  },
+  "mode_labels": [
+    "TWF",
+    "HDF",
+    "PWF",
+    "OSF"
+  ],
+  "cv": {
+    "n_splits": 5,
+    "n_repeats": 3,
+    "search_iter": 25
+  },
+  "cost": {
+    "fn": 10000,
+    "fp": 500,
+    "min_recall": 0.8
+  },
+  "runtime_min": 14.9
+}

@@ -1,0 +1,4 @@
+udi,type,air_temp_k,process_temp_k,rot_speed_rpm,torque_nm,tool_wear_min,mode,proba
+1997,M,298.4,308.0,1416,38.2,198,TWF,0.0006959222533143434
+8507,L,298.4,309.6,1710,27.3,163,tanpa mode,0.001080973464004908
+9175,L,297.8,308.9,1871,25.6,200,TWF,0.0011981421716561994

@@ -1,0 +1,5 @@
+strategi,biaya,kegagalan_lolos,inspeksi,penghematan_vs_reaktif
+Reaktif (run-to-failure),680000.0,68,0,0.0
+Inspeksi semua unit,1000000.0,0,2000,-0.47058823529411775
+Model @ threshold 0.50,177500.0,15,55,0.7389705882352942
+Model @ threshold biaya,133000.0,3,206,0.8044117647058824

@@ -1,0 +1,31 @@
+{
+  "model_name": "machine-failure-prediction",
+  "model_version": "1.0.0",
+  "package_version": "1.0.0",
+  "created_utc": "2026-11-09T17:03:38+00:00",
+  "algorithm": "Random Forest",
+  "calibration": "none",
+  "threshold": 0.025,
+  "feature_columns": [
+    "type",
+    "air_temp_k",
+    "process_temp_k",
+    "rot_speed_rpm",
+    "torque_nm",
+    "tool_wear_min"
+  ],
+  "training_data_md5": "f0adaa9c5e25366c6df1cc2684479871",
+  "n_train": 8000,
+  "test_metrics": {
+    "pr_auc": 0.9054874752781509,
+    "roc_auc": 0.9786072037510657,
+    "recall": 0.9558823529411765,
+    "precision": 0.3155339805825243,
+    "f2": 0.6799163179916318,
+    "brier": 0.006535206407155247
+  },
+  "environment": {
+    "python": "3.13.18",
+    "sklearn": "1.9.1"
+  }
+}

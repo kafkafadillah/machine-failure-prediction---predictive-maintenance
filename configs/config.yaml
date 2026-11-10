@@ -1,0 +1,57 @@
+# =============================================================================
+# Machine Failure Prediction — konfigurasi terpusat
+# Semua angka "ajaib" (seed, biaya, ruang hyperparameter) ada di sini,
+# sehingga eksperimen dapat direproduksi dan diubah tanpa menyentuh kode.
+# =============================================================================
+
+project:
+  name: machine-failure-prediction
+  version: "1.0.0"
+  random_state: 42
+
+paths:
+  raw_data: data/raw/machine_failure.csv
+  processed_dir: data/processed
+  models_dir: models
+  figures_dir: reports/figures
+  tables_dir: reports/tables
+
+data:
+  target: machine_failure
+  # Kolom mode kegagalan = KONSEKUENSI kegagalan, bukan penyebab yang terukur
+  # sebelum kejadian -> dilarang menjadi fitur (target leakage).
+  failure_modes: [TWF, HDF, PWF, OSF, RNF]
+  id_columns: [udi, product_id]
+  test_size: 0.20
+
+features:
+  categorical: [type]
+  numeric_raw:
+    - air_temp_k
+    - process_temp_k
+    - rot_speed_rpm
+    - torque_nm
+    - tool_wear_min
+  # Batas overstrain (min·Nm) per varian kualitas produk — pengetahuan domain
+  # dari dokumentasi mesin (AI4I 2020).
+  overstrain_limits: {L: 11000, M: 12000, H: 13000}
+
+cv:
+  n_splits: 5
+  n_repeats: 3          # repeated stratified K-fold untuk perbandingan model
+  search_iter: 25       # iterasi RandomizedSearchCV per model
+  scoring: average_precision   # PR-AUC: metrik utama untuk data sangat imbalanced
+
+business:
+  # Asumsi biaya (dapat disesuaikan dengan data perusahaan sebenarnya).
+  cost_false_negative: 10000   # kegagalan tak terdeteksi: downtime + perbaikan darurat
+  cost_false_positive: 500     # inspeksi preventif yang ternyata tidak perlu
+  min_recall: 0.80             # syarat minimum dari tim maintenance
+
+evaluation:
+  n_bootstrap: 1000
+  ci_level: 0.95
+
+risk_bands:            # pemetaan probabilitas -> tindakan operasional
+  low: 0.10
+  high: 0.50
